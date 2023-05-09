@@ -8,26 +8,29 @@
      
     <title> Hakkımda </title>
     <style>
-    .image {
-  float: left;
-  width: 33.33%;
-  padding: 5px;
-  box-sizing: border-box;
-}
+      body {
+        background-color: #f2f2f2;
+      }
+      .image {
+        float: left;
+        width: 33.33%;
+        padding: 5px;
+        box-sizing: border-box;
+      }
 
-.image img {
-  width: 100%;
-  height: auto;
-}
+      .image img {
+        width: 100%;
+        height: auto;
+      }
 
-.image p {
-  text-align: center;
-}
+      .image p {
+        text-align: center;
+      }
 
 
       .navbar-nav .nav-link{
         font-weight: 800;
-        color: #d3d3d3;
+        color: #CCCCCC;
       }
     </style>
 
@@ -41,10 +44,33 @@
           <li class="nav-item">
             <a class="nav-link" href="hakkinda.html">Hakkımda</a>
           </li>
+          <li class="nav-item">
+            <a class="nav-link" href="ozgecmis.html">Özgeçmişim</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Şehrim
+            </a>
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <li><a class="dropdown-item" href="sehrim.html">Bilgi</a></li>
+                  <li><a class="dropdown-item" href="mirasimiz.html">Mirasımız</a></li>
+                  <li><a class="dropdown-item" href="takimim.html">Takımımız</a></li>
+                </ul>
+              </li>
         </ul>
+                    <ul class="navbar-nav ms-auto">
+              <li class="nav-item">
+                <a class="nav-link" href="iletisim.html">İletişim</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="login.php">Giriş Yap</a>
+              </li>
+            </ul>
+
+
       </div>
     </div>
   </nav>
+
 <br>
 <br>
 
@@ -148,6 +174,6 @@
 
 
 <br>
-
-
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
 </html>
