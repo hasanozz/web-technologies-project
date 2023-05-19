@@ -2,22 +2,20 @@
 if(isset($_POST['username']) && isset($_POST['password'])){
     $username = $_POST['username'];
 	$password = $_POST['password'];
-	$iusername = substr($username, 0, strpos($username, "@"));
-	if($password == "b221210061" || $password == "B221210061"){
-		$text = sprintf("<div class='container my-5'><div class='alert alert-success text-center' role='alert'>Giriş başarılı! Ana Sayfaya Yönlendiriliyorsunuz<br> Hoşgeldin %s !</h1></div>",$iusername);
-		echo $text;
-		echo '<meta http-equiv="refresh" content="4; url=hakkinda.html">';
-	
+	$mail_password = substr($username, 0, strpos($username, "@"));
+	if($password == $mail_password){
+		$alert = sprintf("<div class='container my-5'><div class='alert alert-success text-center' role='alert'>Giriş başarılı!<br> Hoşgeldiniz %s !</h1></div>",$mail_password);
+		echo $alert;
+		echo '<meta http-equiv="refresh" content="4; url=hakkinda.html"';
 	}
 	else{
-		echo "<div class='container my-5'><div class='alert alert-danger text-center' role='alert'><h4>Mailinizi veya şifrenizi yanlış girdiniz!</h4></div></div>";
+		echo "<div class='container my-2'><div class='alert alert-danger text-center' role='alert'><h6>Mailinizi veya şifrenizi yanlış girdiniz!<br>Lütfen tekrar deneyiniz!!</h6></div></div>";
 	}
 }
-
-
-
-
 ?>
+
+
+
 <!DOCTYPE html>
 <html>
 <head>
