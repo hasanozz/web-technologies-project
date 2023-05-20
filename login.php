@@ -4,7 +4,7 @@ if(isset($_POST['username']) && isset($_POST['password'])){
 	$password = $_POST['password'];
 	$mail_password = substr($username, 0, strpos($username, "@"));
 	if($password == $mail_password){
-		$alert = sprintf("<div class='container my-5'><div class='alert alert-success text-center' role='alert'>Giriş başarılı!<br> Hoşgeldiniz %s !</h1></div>",$mail_password);
+		$alert = sprintf("<div class='container my-5'><div class='alert alert-success text-center' role='alert'>Giriş başarılı!<br> Hoşgeldiniz %s!</h1></div>",$mail_password);
 		echo $alert;
 		echo '<meta http-equiv="refresh" content="4; url=hakkinda.html"';
 	}

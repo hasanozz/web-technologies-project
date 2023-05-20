@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>İlgi Alanım </title>
+    <link rel="stylesheet"  href="style.css">
+    <link rel="stylesheet"  href="veri.css">
+
+</head>
+<body>
+<nav class="navbar navbar-expand-lg bg-dark">
+    <div class="container-fluid">
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link" href="hakkinda.html">Hakkımda</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="ozgecmis.html">Özgeçmişim</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Şehrim
+            </a>
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <li><a class="dropdown-item" href="sehrim.html">Bilgi</a></li>
+                  <li><a class="dropdown-item" href="mirasimiz.html">Mirasımız</a></li>
+                  <li><a class="dropdown-item" href="takimim.html">Takımımız</a></li>
+                </ul>
+          </li>
+          <li class="nav-item">
+                <a class="nav-link" href="ilgi_alanlari.html">İlgi Alanlarım</a>
+          </li>
+
+
+        </ul>
+                    <ul class="navbar-nav ms-auto">
+              <li class="nav-item">
+                <a class="nav-link" href="iletisim.html">İletişim</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="login.php">Giriş Yap</a>
+              </li>
+
+
+            </ul>
+
+
+      </div>
+    </div>
+  </nav>
+
+<br>
+<p>&nbsp;Film izlemek evdeyken yapmayı en sevdiğim aktivitelerdendir. Karayip Korsanları da gerek hikayesiyle gerek kurgusuyla olsun en sevdiğim
+film serisidir. Johnny Depp de oyunculuğuyla filmin kalitesini bir kaç &nbsp;üst kademeye taşıyor. Aşağıda da Karayip Korsanları'nın
+en sevdiğim serisi olan Karayip Korsanları: Ölü Adamın Sandığı hakkında bazı bilgiler var. </p>
+
+
+
+<br><br>
+
+    <div id="film-bilgileri">
+      <div class = "center">
+        <h4>Pirates of the Caribbean: Dead Man's Chest</h4>
+        <img id="film-posteri" src="" alt="Film Poster">
+        <p id="film-ad" style="text-align: right;">Film Adı:</p>
+        <p id="film-oy-sayisi">Oy Sayısı:</p>
+        <p id="film-puani">Puanı:</p>
+        <p id="film-yil">Yıl:</p>
+        <p id="film-tur">Tür:</p>
+        <p id="film-yonetmenler">Yönetmenler:</p>
+        <p id="film-oyuncular">Oyuncular:</p>
+        <p id="film-aciklama">Açıklama:</p>
+        <p id="film-sure">Süre:</p>
+      </div>
+    </div>
+
+    <script>
+        const apiKey = 'f16112a6'; 
+        const movieId = 'tt0383574'; 
+
+        const apiUrl = `http://www.omdbapi.com/?i=${movieId}&apikey=${apiKey}`;
+
+        fetch(apiUrl)
+            .then(response => response.json())
+            .then(data => {
+                document.getElementById('film-posteri').src = data.Poster;
+                document.getElementById('film-ad').textContent = `Film Adı: ${data.Title}`;
+                document.getElementById('film-oy-sayisi').textContent = `Oy Sayısı: ${data.imdbVotes}`;
+                document.getElementById('film-puani').textContent = `Puanı: ${data.imdbRating}`;
+                document.getElementById('film-yil').textContent = `Yıl: ${data.Year}`;
+                document.getElementById('film-tur').textContent = `Tür: ${data.Genre}`;
+                document.getElementById('film-yonetmenler').textContent = `Yönetmenler: ${data.Director}`;
+                document.getElementById('film-oyuncular').textContent = `Oyuncular: ${data.Actors}`;
+                document.getElementById('film-aciklama').textContent = `Açıklama: ${data.Plot}`;
+                document.getElementById('film-sure').textContent = `Süre: ${data.Runtime}`;
+            })
+            .catch(error => console.log(error));
+    </script>
+
+<br>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
+
+
+<br>
+</body>
+</html>
