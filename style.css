@@ -1,6 +1,7 @@
 
       body {
         background-color: #f2f2f2;
+        
       }
       .image {
         float: left;
@@ -23,12 +24,9 @@
         font-weight: 800;
         color: #CCCCCC;
 
-        
-
-
-
-
-
-
-
       }
+
+      .form-container {
+        margin-right: 1em;
+      }
+

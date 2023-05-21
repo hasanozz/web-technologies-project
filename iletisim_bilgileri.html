@@ -10,6 +10,7 @@
     <link rel="stylesheet"  href="style.css">
 </head>
 <body>
+
 <nav class="navbar navbar-expand-lg bg-dark">
     <div class="container-fluid">
       <div class="collapse navbar-collapse" id="navbarNav">
@@ -51,52 +52,31 @@
     </div>
   </nav>
 
+
+
+
+
   <br>
-  <h1>İletişim Formu</h1>
-    <form id="contact-form" action="iletisim_bilgileri.html" method="get">
-    <label for="name">Ad Soyad:</label><br>
-    <input type="text" id="name" name="name" required><br><br>
-
-    <label for="email">E-posta:</label><br>
-    <input type="email" id="email" name="email" required><br><br>
-
-    <label for="gender">Cinsiyet:</label><br>
-    <input type="radio" id="male" name="gender" value="Erkek">
-    <label for="male">Erkek</label><br>
-    <input type="radio" id="female" name="gender" value="Kadın">
-    <label for="female">Kadın</label><br><br>
-
-    <label for="message">Mesaj:</label><br>
-    <textarea id="message" name="message" required></textarea><br><br>
-    <div>
-        <button type="reset">Temizle</button>
-        <button type="submit">Gönder</button>
-    </div>
-  </form>
+  <h1>Gönderilen Bilgiler</h1>
+  <p>Ad Soyad: <span id="name"></span></p>
+  <p>E-posta: <span id="email"></span></p>
+  <p>Cinsiyet: <span id="gender"></span></p>
+  <p>Mesaj: <span id="message"></span></p>
 
   <script>
-    document.getElementById("contact-form").addEventListener("submit", function(event) {
-      event.preventDefault();
-      
-      const name = document.getElementById("name").value;
-      const email = document.getElementById("email").value;
-      const gender = document.querySelector('input[name="gender"]:checked').value;
-      const message = document.getElementById("message").value;
+    const urlParams = new URLSearchParams(window.location.search);
+    const name = urlParams.get("name");
+    const email = urlParams.get("email");
+    const gender = urlParams.get("gender");
+    const message = urlParams.get("message");
 
-      const urlParams = new URLSearchParams();
-      urlParams.append("name", name);
-      urlParams.append("email", email);
-      urlParams.append("gender", gender);
-      urlParams.append("message", message);
-
-      const url = "iletisim_bilgileri.html?" + urlParams.toString();
-      window.location.href = url;
-    });
+    document.getElementById("name").textContent = name;
+    document.getElementById("email").textContent = email;
+    document.getElementById("gender").textContent = gender;
+    document.getElementById("message").textContent = message;
   </script>
 
 
-
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
-
 </body>
 </html>
